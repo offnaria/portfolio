@@ -1,4 +1,4 @@
-baseurl = "https://offnaria.github.io/portfolio/"
+baseurl = "https://example.org/"
 title = "offNaria's Homepage"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "ja"
