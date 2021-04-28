@@ -110,11 +110,15 @@
 <p>最近，メインPC（ゲーミング彼女）のCドライブの容量がみるみる少なくなっていくのに頭を抱えていた．250GBのSSD上に作成されたパーティションであり，個人フォルダの類はすべて他のストレージ（2TBのHDD）に移している．</p>
 <p>使っていたストレージが250GBともともと少なかったわけであるが，かといっていきなり新しい大容量ストレージに換装しOSごと再インストールなんてこともできなかったため，ドライブを圧迫している犯人を突き止め可能であれば移動するという処置を取ることにした．</p>
 <p>ちなみに，使っているストレージはSamsungの970 EVO Plus 250GB．</p>
-<!-- raw HTML omitted -->
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=reyu735-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MZ5LB7L&linkId=913437ec8aa14bdbe7baca0dd49b7081"></iframe>
 <p>Adobe製品のキャッシュ等々を消した時点での残り容量は17.2GBだった．</p>
 <p><img src="https://offnaria.github.io/portfolio/img/home/c-drive-panpan/c-red.jpg" alt="残り17.2GB"></p>
 <p>人力での犯人捜しは不可能なので，<a href="https://www.vector.co.jp/soft/winnt/util/se475617.html">DiskInfo</a>というアプリケーションを使ってCドライブのルートから辿っていくと，ある一つのファイルに辿り着いた．</p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Cの容量足りなくてAdobeのキャッシュとか全消ししてもぜんぜん変わらんから頭抱えてたけど，どうやらWSLがデカすぎるっポイ <a href="https://t.co/U6GoKRqkGs">pic.twitter.com/U6GoKRqkGs</a></p>&mdash; Y.M.D オフライン (@YMD_Glasses) <a href="https://twitter.com/YMD_Glasses/status/1387328569953554434?ref_src=twsrc%5Etfw">April 28, 2021</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</div>
 <p>それは，WSL（Windows Subsystem for Linux）によって作成される仮想ハードディスクファイル<code>ext4.vhdx</code>であった．250GBのうちの54.2GBとはなんたることか．</p>
 <p><img src="https://offnaria.github.io/portfolio/img/home/c-drive-panpan/vhdx.jpg" alt="仮想ハードディスクファイル"></p>
 <p>というわけで，WSLのファイルを他のドライブに移せないか調べてみたところ，いくつかのサイトでその方法が紹介されていた．とくに有用だったのが<a href="https://www.aise.ics.saitama-u.ac.jp/~gotoh/HowToReplaceWSL.html">このサイト</a>である．</p>
@@ -139,7 +143,11 @@ Linux 用 Windows サブシステムには、ディストリビューション�
 ディストリビューションは Microsoft Store にアクセスしてインストールすることができます:
 https://aka.ms/wslstore
 </code></pre><p>これでUbuntuの登録が解除されたことがわかった．また，仮想ディスクファイルも同時に削除されていることが分かる．</p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
+|![解除前](/img/home/c-drive-panpan/folder.jpg)|![解除後](/img/home/c-drive-panpan/folder2.jpg)|
+|---|---|
+|解除前|解除後|
+</div>
 <p>さて，ここからが本日の大一番である，WSLへの再インポートだ．とはいえこれも一つのコマンドで実行することができて便利だ．</p>
 <pre><code>&gt; wsl --import Ubuntu T:\wsl\ubuntu T:\wsl\ubuntu\Ubuntu.tar
 
