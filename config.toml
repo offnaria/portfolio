@@ -63,7 +63,3 @@ canonifyurls = true
   github        = "https://github.com/offnaria"
   youtube       = "https://www.youtube.com/channel/UCzWNynh1ChlHwoxE7Qmz_5A"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true

@@ -4,7 +4,6 @@ draft = false
 image = "img/home/c-drive-panpan/c-drive-panpan.jpg"
 date = 2021-04-28T20:12:04+09:00
 title = "WSLがCドライブを圧迫していたので移動した"
-weight = 0
 +++
 
 <!--more-->
@@ -26,9 +25,7 @@ Adobe製品のキャッシュ等々を消した時点での残り容量は17.2GB
 
 人力での犯人捜しは不可能なので，[DiskInfo](https://www.vector.co.jp/soft/winnt/util/se475617.html)というアプリケーションを使ってCドライブのルートから辿っていくと，ある一つのファイルに辿り着いた．
 
-<div style="text-align: center;">
 {{< tweet 1387328569953554434 >}}
-</div>
 
 それは，WSL（Windows Subsystem for Linux）によって作成される仮想ハードディスクファイル`ext4.vhdx`であった．250GBのうちの54.2GBとはなんたることか．
 
@@ -72,11 +69,9 @@ https://aka.ms/wslstore
 
 これでUbuntuの登録が解除されたことがわかった．また，仮想ディスクファイルも同時に削除されていることが分かる．
 
-<div style="text-align: center;">
 |![解除前](/img/home/c-drive-panpan/folder.jpg)|![解除後](/img/home/c-drive-panpan/folder2.jpg)|
 |---|---|
 |解除前|解除後|
-</div>
 
 さて，ここからが本日の大一番である，WSLへの再インポートだ．とはいえこれも一つのコマンドで実行することができて便利だ．
 
