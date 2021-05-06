@@ -49,3 +49,8 @@
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 <!-- OGP end -->
+<!-- Google Analytics begin -->
+{{ if not .Site.IsServer }}
+  {{ partial "google/analytics" . }}
+{{ end }}
+<!-- Google Analytics end -->
